@@ -11,6 +11,22 @@
 - 使用者需自行确保遵守当地法律、软件许可协议及服务器规则
 - 项目作者不对使用者的违规行为承担任何责任
 
+## 独立性声明
+
+本项目为个人自发进行的独立研究工作：
+
+- 未接受任何形式的外部资助、赞助或商业合作
+- 不代表、不隶属于任何组织、团体或个人
+- 与任何政治立场、意识形态或商业利益无关
+- 项目内容仅反映作者个人的技术研究兴趣
+
+项目由个人独立发起并维护，所有观点与成果仅代表技术研究层面，不涉及任何其他立场。
+
+## 安全性声明
+
+本项目仅通过本 GitHub 仓库与 B站账号 [Gante393_](https://space.bilibili.com/3461573733517603) 视频附带资源发布源码与构建产物，以上渠道发布的文件可保证安全性。
+任何在其他 GitHub 仓库、Discord、QQ群、Telegram群、第三方网站或网盘等渠道发布的 "Vape" 相关程序安全性均无法保证。本项目不对这些程序及其可能造成的损失承担任何责任。
+
 ## 项目组成
 
 | 仓库                                                       | 职责                                                        | Actions 产物                       |
@@ -38,12 +54,11 @@
 
 - [VapeLoader / Windows 构建](https://github.com/OpenVapeCN/VapeLoader/actions) 下载 `vape-v4-controller-windows-x64`
 - [VapeService / 持续集成](https://github.com/OpenVapeCN/VapeService/actions) 下载 `vape421-experimental-service-0.1.0`
-- [VapeV4.21 / 持续集成](https://github.com/OpenVapeCN/VapeV4.21/actions) 下载 `windows-x64-injection-bundle` 
+- [VapeV4.21 / 持续集成](https://github.com/OpenVapeCN/VapeV4.21/actions) 下载 `windows-x64-injection-bundle`
 
 Actions artifact 默认只保留 **14 天**。如果页面中没有可下载产物，请登录 GitHub 后手动 **Run workflow** 触发一次构建。
 
 解压 `windows-x64-injection-bundle` 后可得到 `Vape421Native.dll` 和 `Vape421Injector.exe` 两个文件，需与 `vape-v4-controller-windows-x64.exe` 放在同一目录下。
-
 
 ## 快速开始
 
@@ -121,3 +136,24 @@ java -jar .\vape421-experimental-service-0.1.0.jar `
 - [VapeLoader README](https://github.com/OpenVapeCN/VapeLoader#readme)：CMake + Visual Studio 2022，Windows x64；
 - [VapeService README](https://github.com/OpenVapeCN/VapeService#readme)：Gradle Wrapper + JDK 17；
 - [VapeV4.21 README](https://github.com/OpenVapeCN/VapeV4.21#readme)：Gradle、CMake、Visual Studio 2022 与 JNI/JVMTI 工具链。
+
+## 鸣谢
+
+- [OpenVapeCN](https://github.com/OpenVapeCN)：本项目的发起人、维护者与贡献者。
+- [GPT-5.6 Sol](https://chatgpt.com/)：项目繁重工作的主要完成者。
+- [CFR](https://github.com/leibnitz27/cfr)：帮助生成恢复实现代码。
+- [Ghidra](https://ghidra-sre.org/)：用于逆向工程的静态分析工具。
+- [Steesha](https://blog.steesha.cn/)：提供Vape主程序和部分逆向成果。
+- [John Xina](https://github.com/spec-johnxina/)：提供Vape V4.21的dump文件。
+- [cubk](https://github.com/cubk1/)：提供Vape V3的逆向工程代码，为映射提供了基础。
+- [LvStrnggg](https://github.com/LvStrnggg/zkm-flow)：提供zkm控制流逆向思路。
+
+## 许可证
+
+本项目所有代码采用 [CC0 1.0 Universal](LICENSE) 许可。
+
+你可以：
+- 自由复制、分发、传播本项目的源码与构建产物
+- 自由修改、二次开发、集成到商业或非商业项目
+- 自由用于任何目的，无需支付费用或获得额外许可
+- 自由选择是否署名、是否以相同许可发布衍生作品
