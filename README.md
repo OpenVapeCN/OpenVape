@@ -39,7 +39,14 @@
 
 - Windows 10/11 x64；
 - JDK 17，用于运行 VapeService；
-- Minecraft 1.8.9 测试实例，并使用 64 位 JVM；
+- 受支持的 Minecraft Forge 测试实例，并使用 64 位 JVM；
+
+## Minecraft 兼容性
+
+- 支持 Minecraft 1.7.10 Forge、1.8.9 Forge 和 1.12.2 Forge；
+- 支持向启用了 Forge 的 Lunar Client 实例注入；
+- 不支持 Vanilla 或 Fabric；
+- Minecraft 1.16.5 的支持不佳，部分映射、渲染和模块功能可能无法正常工作。
 
 ## 下载构建产物
 
@@ -86,7 +93,7 @@ java -jar .\vape421-experimental-service-0.1.0.jar `
 
 ### 2. 启动 Minecraft
 
-启动使用 64 位 JVM 的 Minecraft 1.8.9 测试实例，并等待游戏窗口出现。Loader 只会列出窗口标题中包含 `Minecraft` 的 `java.exe` 或 `javaw.exe` 进程。
+启动使用 64 位 JVM 的受支持 Forge 实例，并等待游戏窗口出现。也可以启动启用了 Forge 的 Lunar Client 实例。Loader 会列出窗口标题中包含 `Minecraft` 或 `Lunar Client` 的 `java.exe` 或 `javaw.exe` 进程。
 
 ### 3. 通过 Loader 加载
 
@@ -114,20 +121,46 @@ java -jar .\vape421-experimental-service-0.1.0.jar `
 
 ## 常见问题
 
-**Loader 中看不到 Minecraft**\
-确认游戏使用 64 位 JVM，进程名为 `java.exe` 或 `javaw.exe`，并且窗口标题包含 `Minecraft`。
+### 1. Loader 看不到游戏
 
-**提示找不到** **`Vape421Native.dll`**\
-将 DLL 与 `vape-v4-controller-windows-x64.exe` 放在同一目录，保留原始文件名。
+Loader 依赖 Java 进程和可见窗口标题发现游戏，只有窗口标题包含 `Minecraft` 、 `Lunar` 或 `Feather` 才会被列出。
+请等待游戏进入主菜单，确认使用 64 位 JVM，并核对所选 PID、游戏版本和 Forge 环境。Vanilla 与 Fabric 不受支持。不要向标题相似的启动器辅助 JVM 或其他 Java 程序注入。
 
-**Loader 无法登录本地 Service**\
-确认 Service 正在运行且 HTTP 端口未被占用；默认地址是 `http://127.0.0.1:8080`。
+### 2. Loader 选择游戏进程后卡死
 
-**加载超时或注入后没有界面**\
-检查 `vape421-native.log` 和 Service 输出，并确认目标是 Minecraft 1.8.9 x64 测试实例。Loader 当前的加载超时为 90 秒。
+若 Minecraft 已经被注入过 Vape，无论第一次 Vape 是否成功加载，第二次注入相同游戏进程时 Loader 都会卡死。
+若第一次注入失败，请重启 Minecraft 并重新注入。
 
-**Windows 安全软件拦截 DLL 或注入器**\
-原生组件会使用 `LoadLibraryW` 写入目标 JVM，这类行为可能触发安全软件。只使用自己从源码或可信 Actions 工作流生成并核验过的产物，不要直接关闭系统防护。
+### 3. Loader 提示 Product DLL did not acknowledge... 或 Unexpected...
+
+VapeV4 不支持 Vanilla 或 Fabric。
+说明 Vape 注入失败，请检查 Minecraft 是否为支持的 Forge 版本，重启 Minecraft 并重新尝试注入。
+如果问题依然存在，请检查 vape421-native.log 并报告问题。
+
+### 4. Loader 显示 Finished Loading，但游戏中没有出现 Finished Loading 提示
+
+说明 Vape 注入失败，请检查 Minecraft 是否为支持的 Forge 版本，重启 Minecraft 并重新尝试注入。
+如果问题依然存在，请检查 vape421-native.log 并报告问题。
+
+### 5. 出现 injection error code、字段或方法映射失败或崩端
+
+请检查 Minecraft 是否为支持的 Forge 版本，重启 Minecraft 并重新尝试注入。
+如果问题依然存在，请检查 vape421-native.log 并报告问题。
+
+### 6. ClickGUI 能打开但无法点击、鼠标位置错误或按键卡住
+
+请开一个 Issue 报告问题，详细描述问题如何出现。
+
+### 7. Render 模块导致 OpenGL 1283、HUD 消失、画面损坏或崩溃
+
+目前实现对 1.16+ 版本的兼容性不佳，建议使用 1.8.9 Forge 注入。
+
+### 8. 配置消失、保存失败、好友或 Party 状态异常
+
+Service 使用单个本地 JSON 文件保存账户和配置；数据路径是相对启动目录，换目录启动会看起来像创建了全新账户。文件损坏、无写权限、磁盘满、同时启动多个 Service 或异常退出都可能影响保存。同一账户的新 Zeus 连接会替换旧连接，Service 重启、系统休眠或网络切换后，高频在线状态也不会自动恢复。
+
+始终使用明确的 `--data-file` 路径并定期备份，避免两个 Service 实例写同一文件。当前 Service 是实验性兼容层，部分公共配置、评论、举报、标签和分页行为为简化实现，连接成功不等于所有原版 Online 功能完整可用。
+
 
 ## 从源码构建
 
