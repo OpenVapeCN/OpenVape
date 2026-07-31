@@ -43,7 +43,8 @@
 
 ## Minecraft 兼容性
 
-- 支持 Minecraft 1.7.10 Forge、1.8.9 Forge 和 1.12.2 Forge；
+- 支持 Minecraft 1.7.10 Forge、1.8.9 Forge、1.12.2 Forge 和 1.21.11 Forge；
+- Minecraft 1.21.11 已在 Forge 61.0.8 上验证；
 - 支持向启用了 Forge 的 Lunar Client 实例注入；
 - 不支持 Vanilla 或 Fabric；
 - Minecraft 1.16.5 的支持不佳，部分映射、渲染和模块功能可能无法正常工作。
@@ -157,7 +158,7 @@ VapeV4 不支持 Vanilla 或 Fabric。
 
 ### 8. Render 模块导致 OpenGL 1283、HUD 消失、画面损坏或崩溃
 
-目前实现对 1.16+ 版本的兼容性不佳，建议使用 1.8.9 Forge 注入。
+Minecraft 1.16.5 及其他未列出的 1.16+ 版本兼容性仍不佳；1.21.11 Forge 请使用已验证的 Forge 61.0.8。
 
 ### 9. 配置消失、保存失败、好友或 Party 状态异常
 
