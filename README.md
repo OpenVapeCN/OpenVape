@@ -24,7 +24,7 @@
 
 ## 安全性声明
 
-本项目仅通过本 GitHub 仓库与 B站账号 [Gante393_](https://space.bilibili.com/3461573733517603) 视频附带资源发布源码与构建产物，以上渠道发布的文件可保证安全性。
+本项目仅通过本 GitHub 仓库、[Gitee镜像仓库](https://gitee.com/OpenVape) 与 B站账号 [Gante393_](https://space.bilibili.com/3461573733517603) 视频附带资源发布源码与构建产物，以上渠道发布的文件可保证安全性。
 任何在其他 GitHub 仓库、Discord、QQ群、Telegram群、第三方网站或网盘等渠道发布的 "Vape" 相关程序安全性均无法保证。本项目不对这些程序及其可能造成的损失承担任何责任。
 
 ## 项目组成
