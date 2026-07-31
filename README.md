@@ -131,31 +131,35 @@ Loader 依赖 Java 进程和可见窗口标题发现游戏，只有窗口标题�
 若 Minecraft 已经被注入过 Vape，无论第一次 Vape 是否成功加载，第二次注入相同游戏进程时 Loader 都会卡死。
 若第一次注入失败，请重启 Minecraft 并重新注入。
 
-### 3. Loader 提示 Product DLL did not acknowledge... 或 Unexpected...
+### 3. Loader 提示 Vape421Native.dll was not found beside the Loader
+
+VapeV421Native.dll 与 Loader 必须放在同一目录下。
+
+### 4. Loader 提示 Product DLL did not acknowledge... 或 Unexpected...
 
 VapeV4 不支持 Vanilla 或 Fabric。
 说明 Vape 注入失败，请检查 Minecraft 是否为支持的 Forge 版本，重启 Minecraft 并重新尝试注入。
 如果问题依然存在，请检查 vape421-native.log 并报告问题。
 
-### 4. Loader 显示 Finished Loading，但游戏中没有出现 Finished Loading 提示
+### 5. Loader 显示 Finished Loading，但游戏中没有出现 Finished Loading 提示 
 
 说明 Vape 注入失败，请检查 Minecraft 是否为支持的 Forge 版本，重启 Minecraft 并重新尝试注入。
 如果问题依然存在，请检查 vape421-native.log 并报告问题。
 
-### 5. 出现 injection error code、字段或方法映射失败或崩端
+### 6. 出现 injection error code、字段或方法映射失败或崩端
 
 请检查 Minecraft 是否为支持的 Forge 版本，重启 Minecraft 并重新尝试注入。
 如果问题依然存在，请检查 vape421-native.log 并报告问题。
 
-### 6. ClickGUI 能打开但无法点击、鼠标位置错误或按键卡住
+### 7. ClickGUI 能打开但无法点击、鼠标位置错误或按键卡住
 
 请开一个 Issue 报告问题，详细描述问题如何出现。
 
-### 7. Render 模块导致 OpenGL 1283、HUD 消失、画面损坏或崩溃
+### 8. Render 模块导致 OpenGL 1283、HUD 消失、画面损坏或崩溃
 
 目前实现对 1.16+ 版本的兼容性不佳，建议使用 1.8.9 Forge 注入。
 
-### 8. 配置消失、保存失败、好友或 Party 状态异常
+### 9. 配置消失、保存失败、好友或 Party 状态异常
 
 Service 使用单个本地 JSON 文件保存账户和配置；数据路径是相对启动目录，换目录启动会看起来像创建了全新账户。文件损坏、无写权限、磁盘满、同时启动多个 Service 或异常退出都可能影响保存。同一账户的新 Zeus 连接会替换旧连接，Service 重启、系统休眠或网络切换后，高频在线状态也不会自动恢复。
 
