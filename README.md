@@ -39,14 +39,14 @@
 
 - Windows 10/11 x64；
 - JDK 17，用于运行 VapeService；
-- 受支持的 Minecraft Forge 测试实例，并使用 64 位 JVM；
+- 受支持的 Minecraft 测试实例，并使用 64 位 JVM；
 
 ## Minecraft 兼容性
 
-- 支持 Minecraft 1.7.10 Forge、1.8.9 Forge、1.12.2 Forge 和 1.21.11 Forge；
-- Minecraft 1.21.11 已在 Forge 61.0.8 上验证；
+- 支持 Minecraft 1.7.10 Forge、1.8.9 Forge、1.8.9 Vanilla、1.12.2 Forge、1.21.11 Forge 和 26.2 Forge；
+- Minecraft 1.21.11 已在 Forge 61.0.8 上验证，Minecraft 26.2 已在 Forge 65.1.0 上验证；
 - 支持向启用了 Forge 的 Lunar Client 实例注入；
-- 不支持 Vanilla 或 Fabric；
+- 不支持 Fabric；
 - Minecraft 1.16.5 的支持不佳，部分映射、渲染和模块功能可能无法正常工作。
 
 ## 下载构建产物
@@ -94,7 +94,7 @@ java -jar .\vape421-experimental-service-0.1.0.jar `
 
 ### 2. 启动 Minecraft
 
-启动使用 64 位 JVM 的受支持 Forge 实例，并等待游戏窗口出现。也可以启动启用了 Forge 的 Lunar Client 实例。Loader 会列出窗口标题中包含 `Minecraft` 或 `Lunar Client` 的 `java.exe` 或 `javaw.exe` 进程。
+启动使用 64 位 JVM 的受支持 Minecraft 实例，并等待游戏窗口出现。也可以启动启用了 Forge 的 Lunar Client 实例。Loader 会列出窗口标题中包含 `Minecraft` 或 `Lunar Client` 的 `java.exe` 或 `javaw.exe` 进程。
 
 ### 3. 通过 Loader 加载
 
@@ -125,7 +125,7 @@ java -jar .\vape421-experimental-service-0.1.0.jar `
 ### 1. Loader 看不到游戏
 
 Loader 依赖 Java 进程和可见窗口标题发现游戏，只有窗口标题包含 `Minecraft` 、 `Lunar` 或 `Feather` 才会被列出。
-请等待游戏进入主菜单，确认使用 64 位 JVM，并核对所选 PID、游戏版本和 Forge 环境。Vanilla 与 Fabric 不受支持。不要向标题相似的启动器辅助 JVM 或其他 Java 程序注入。
+请等待游戏进入主菜单，确认使用 64 位 JVM，并核对所选 PID、游戏版本和运行环境。支持 1.8.9 Vanilla，Fabric 不受支持。不要向标题相似的启动器辅助 JVM 或其他 Java 程序注入。
 
 ### 2. Loader 选择游戏进程后卡死
 
@@ -138,18 +138,18 @@ VapeV421Native.dll 与 Loader 必须放在同一目录下。
 
 ### 4. Loader 提示 Product DLL did not acknowledge... 或 Unexpected...
 
-VapeV4 不支持 Vanilla 或 Fabric。
-说明 Vape 注入失败，请检查 Minecraft 是否为支持的 Forge 版本，重启 Minecraft 并重新尝试注入。
+VapeV4 支持 1.8.9 Vanilla，但不支持 Fabric。
+说明 Vape 注入失败，请检查 Minecraft 是否为受支持的版本，重启 Minecraft 并重新尝试注入。
 如果问题依然存在，请检查 vape421-native.log 并报告问题。
 
 ### 5. Loader 显示 Finished Loading，但游戏中没有出现 Finished Loading 提示 
 
-说明 Vape 注入失败，请检查 Minecraft 是否为支持的 Forge 版本，重启 Minecraft 并重新尝试注入。
+说明 Vape 注入失败，请检查 Minecraft 是否为受支持的版本，重启 Minecraft 并重新尝试注入。
 如果问题依然存在，请检查 vape421-native.log 并报告问题。
 
 ### 6. 出现 injection error code、字段或方法映射失败或崩端
 
-请检查 Minecraft 是否为支持的 Forge 版本，重启 Minecraft 并重新尝试注入。
+请检查 Minecraft 是否为受支持的版本，重启 Minecraft 并重新尝试注入。
 如果问题依然存在，请检查 vape421-native.log 并报告问题。
 
 ### 7. ClickGUI 能打开但无法点击、鼠标位置错误或按键卡住
@@ -158,7 +158,7 @@ VapeV4 不支持 Vanilla 或 Fabric。
 
 ### 8. Render 模块导致 OpenGL 1283、HUD 消失、画面损坏或崩溃
 
-Minecraft 1.16.5 及其他未列出的 1.16+ 版本兼容性仍不佳；1.21.11 Forge 请使用已验证的 Forge 61.0.8。
+Minecraft 1.16.5 及其他未列出的 1.16+ 版本兼容性仍不佳；1.21.11 Forge 请使用已验证的 Forge 61.0.8，26.2 Forge 请使用已验证的 Forge 65.1.0。
 
 ### 9. 配置消失、保存失败、好友或 Party 状态异常
 
