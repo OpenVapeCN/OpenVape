@@ -43,7 +43,7 @@
 
 ## Minecraft 兼容性
 
-- 支持 Minecraft 1.7.10 Forge、1.7.10 Vanilla、1.8.9 Forge、1.8.9 Vanilla、1.12.2 Forge、1.12.2 Vanilla、1.21.11 Forge、1.21.11 Vanilla 和 26.2 Forge；
+- 支持 Minecraft 1.7.10 Forge、1.7.10 Vanilla、1.8.9 Forge、1.8.9 Vanilla、1.12.2 Forge、1.12.2 Vanilla、1.21.11 Forge、1.21.11 Vanilla、26.2 Forge 和 26.2 Vanilla；
 - Minecraft 1.21.11 Forge 已在 Forge 61.0.8 上验证，Minecraft 26.2 已在 Forge 65.1.0 上验证；
 - 支持向启用了 Forge 的 Lunar Client 实例注入；
 - 不支持 Fabric；
@@ -125,7 +125,7 @@ java -jar .\vape421-experimental-service-0.1.0.jar `
 ### 1. Loader 看不到游戏
 
 Loader 依赖 Java 进程和可见窗口标题发现游戏，只有窗口标题包含 `Minecraft` 、 `Lunar` 或 `Feather` 才会被列出。
-请等待游戏进入主菜单，确认使用 64 位 JVM，并核对所选 PID、游戏版本和运行环境。支持 1.7.10、1.8.9、1.12.2 和 1.21.11 Vanilla，Fabric 不受支持。不要向标题相似的启动器辅助 JVM 或其他 Java 程序注入。
+请等待游戏进入主菜单，确认使用 64 位 JVM，并核对所选 PID、游戏版本和运行环境。支持 1.7.10、1.8.9、1.12.2、1.21.11 和 26.2 Vanilla，Fabric 不受支持。不要向标题相似的启动器辅助 JVM 或其他 Java 程序注入。
 
 ### 2. Loader 选择游戏进程后卡死
 
@@ -138,7 +138,7 @@ VapeV421Native.dll 与 Loader 必须放在同一目录下。
 
 ### 4. Loader 提示 Product DLL did not acknowledge... 或 Unexpected...
 
-VapeV4 支持 1.7.10、1.8.9、1.12.2 和 1.21.11 Vanilla，但不支持 Fabric。
+VapeV4 支持 1.7.10、1.8.9、1.12.2、1.21.11 和 26.2 Vanilla，但不支持 Fabric。
 说明 Vape 注入失败，请检查 Minecraft 是否为受支持的版本，重启 Minecraft 并重新尝试注入。
 如果问题依然存在，请检查 vape421-native.log 并报告问题。
 
