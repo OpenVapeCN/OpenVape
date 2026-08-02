@@ -53,7 +53,7 @@
 | 26.2 | ✓ | ✓ | ✓ |
 
 - Minecraft 1.21.11 Forge 已在 Forge 61.0.8 上验证，Minecraft 1.21.11 Fabric 面向 Fabric Loader 0.19.3，Minecraft 26.2 Forge 已在 Forge 65.1.0 上验证，Minecraft 26.2 Fabric 已在 Fabric Loader 0.19.3 上验证；
-- 支持向启用了 Forge 的 Lunar Client 实例注入；
+- 支持向 Lunar Client 实例注入；
 - 其他 Fabric 版本不在当前支持范围；
 - Minecraft 1.16.5 的支持不佳，部分映射、渲染和模块功能可能无法正常工作。
 
