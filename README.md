@@ -24,7 +24,7 @@
 
 ## 安全性声明
 
-本项目仅通过本 GitHub 仓库、[Gitee镜像仓库](https://gitee.com/OpenVape) 与 B站账号 [Gante393_](https://space.bilibili.com/3461573733517603) 视频附带资源发布源码与构建产物，以上渠道发布的文件可保证安全性。
+本项目仅通过本 GitHub 仓库、[Gitee镜像仓库](https://gitee.com/OpenVape) 与 B站账号 [Gante393\_](https://space.bilibili.com/3461573733517603) 视频附带资源发布源码与构建产物，以上渠道发布的文件可保证安全性。
 任何在其他 GitHub 仓库、Discord、QQ群、Telegram群、第三方网站或网盘等渠道发布的 "Vape" 相关程序安全性均无法保证。本项目不对这些程序及其可能造成的损失承担任何责任。
 
 ## 项目组成
@@ -43,17 +43,18 @@
 
 ## Minecraft 兼容性
 
-| Minecraft | Vanilla | Forge | Fabric |
-| --- | :---: | :---: | :---: |
-| 1.7.10 | ✓ | ✓ | - |
-| 1.8.9 | ✓ | ✓ | - |
-| 1.12.2 | ✓ | ✓ | - |
-| 1.16.5 | | | |
-| 1.21.11 | ✓ | ✓ | ✓ |
-| 26.2 | ✓ | ✓ | ✓ |
+| Minecraft | Vanilla |  Forge | Fabric |
+| --------- | :-----: | :----: | :----: |
+| 1.7.10    |    ✓    |    ✓   |    -   |
+| 1.8.9     |    ✓    |    ✓   |    -   |
+| 1.12.2    |    ✓    |    ✓   |    -   |
+| 1.16.5    |  <br /> | <br /> | <br /> |
+| 1.21.11   |    ✓    |    ✓   |    ✓   |
+| 26.2      |    ✓    |    ✓   |    ✓   |
 
 - Minecraft 1.21.11 Forge 已在 Forge 61.0.8 上验证，Minecraft 1.21.11 Fabric 面向 Fabric Loader 0.19.3，Minecraft 26.2 Forge 已在 Forge 65.1.0 上验证，Minecraft 26.2 Fabric 已在 Fabric Loader 0.19.3 上验证；
 - 支持向 Lunar Client 实例注入；
+- 支持注入 Badlion Client 1.8.9；
 - 其他 Fabric 版本不在当前支持范围；
 - Minecraft 1.16.5 的支持不佳，部分映射、渲染和模块功能可能无法正常工作。
 - **对于26.2版本，请在进入服务器或单人世界后注入**。
@@ -151,7 +152,7 @@ VapeV4 支持 1.7.10、1.8.9、1.12.2、1.21.11 和 26.2 Vanilla，以及 1.21.1
 说明 Vape 注入失败，请检查 Minecraft 是否为受支持的版本，重启 Minecraft 并重新尝试注入。
 如果问题依然存在，请检查 vape421-native.log 并报告问题。
 
-### 5. Loader 显示 Finished Loading，但游戏中没有出现 Finished Loading 提示 
+### 5. Loader 显示 Finished Loading，但游戏中没有出现 Finished Loading 提示
 
 说明 Vape 注入失败，请检查 Minecraft 是否为受支持的版本，重启 Minecraft 并重新尝试注入。
 如果问题依然存在，请检查 vape421-native.log 并报告问题。
@@ -174,7 +175,6 @@ Minecraft 1.16.5 及其他未列出的 1.16+ 版本兼容性仍不佳；1.21.11 
 Service 使用单个本地 JSON 文件保存账户和配置；数据路径是相对启动目录，换目录启动会看起来像创建了全新账户。文件损坏、无写权限、磁盘满、同时启动多个 Service 或异常退出都可能影响保存。同一账户的新 Zeus 连接会替换旧连接，Service 重启、系统休眠或网络切换后，高频在线状态也不会自动恢复。
 
 始终使用明确的 `--data-file` 路径并定期备份，避免两个 Service 实例写同一文件。当前 Service 是实验性兼容层，部分公共配置、评论、举报、标签和分页行为为简化实现，连接成功不等于所有原版 Online 功能完整可用。
-
 
 ## 从源码构建
 
@@ -200,7 +200,9 @@ Service 使用单个本地 JSON 文件保存账户和配置；数据路径是相
 本项目所有代码采用 [CC0 1.0 Universal](LICENSE) 许可。
 
 你可以：
+
 - 自由复制、分发、传播本项目的源码与构建产物
 - 自由修改、二次开发、集成到商业或非商业项目
 - 自由用于任何目的，无需支付费用或获得额外许可
 - 自由选择是否署名、是否以相同许可发布衍生作品
+
